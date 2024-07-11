@@ -8,6 +8,18 @@ pipeline {
           git branch: 'main', url: 'https://github.com/VSacr1/vat-calculator'
         }
     }
+
+    stage('Install'){
+      steps {
+        sh "npm install"
+      }
+    }
+
+    stage('Test') {
+      steps {
+        sh "npm test"
+      }
+    }
     stage('SonarQube Analysis') {
       environment {
         scannerHome = tool 'sonarqube'
