@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        git branch: 'main;, url: 'https://github.com/VSacr1/vat-calculator.git'
+        git branch: 'main', url: 'https://github.com/VSacr1/vat-calculator.git'
       }
     }
     stage('SonarQube Analysis') {
