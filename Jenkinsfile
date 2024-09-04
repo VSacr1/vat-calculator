@@ -6,6 +6,7 @@ pipeline {
     stage('Checkout') {
        git branch: 'main', url: 'https://github.com/VSacr1/vat-calculator.git'
     }
+    
     stage('SonarQube Analysis') {
       def scannerHome = tool 'SonarScanner';
       withSonarQubeEnv() {
